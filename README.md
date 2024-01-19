@@ -9,9 +9,9 @@ Este projeto foi criado a fim de aplicar conhecimentos adquiridos durante os est
 - Cypress 13.6.3
 
 ## Estrutura do projeto:
-**cypress\support\commands.js** -> Contém os comandos personalizados para modularizar o código tornado mais fácil a reutilização de algumas ações.
-**cypress.env.json** -> Contém algumas variáveis para utilização no código para que não seja necessário logar informações sensíveis durante os testes, como usuários e senhas.
-**e2e** -> Contém os arquivos que armazenam as suítes de testes na estrutura:
+- **cypress\support\commands.js** -> Contém os comandos personalizados para modularizar o código tornado mais fácil a reutilização de algumas ações.
+- **cypress.env.json** -> Contém algumas variáveis para utilização no código para que não seja necessário logar informações sensíveis durante os testes, como usuários e senhas.
+- **e2e** -> Contém os arquivos que armazenam as suítes de testes na estrutura:
 - Nome_da_funcionalidade.cy.js
 
 ## Cenários de testes:
