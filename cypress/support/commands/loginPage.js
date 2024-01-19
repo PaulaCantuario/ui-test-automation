@@ -1,4 +1,7 @@
-// Adicione outros comandos de navegação conforme necessário
+// Adicione outros comandos de interação com elementos da página de Login
+
+import { loginPage } from "../locators/loginPage"
+import { toastMessage } from "../locators/toastMessages"
 
 //Login com usuário e senha corretos:
 Cypress.Commands.add('login', (
@@ -8,13 +11,13 @@ Cypress.Commands.add('login', (
     const login = () => {
       // Ações para realizar o login
       cy.visit('https://barrigareact.wcaquino.me/')  
-      cy.get('[data-test="email"]').type(user)
-      cy.get('[data-test="passwd"]').type(password, { log: false })
-      cy.get('[type="submit"]').contains('Entrar').click()
+      cy.get(loginPage.EmailInput).type(user)
+      cy.get(loginPage.PasswordInput).type(password, { log: false })
+      cy.get(loginPage.SubmitButton).click()
 
-      // Verificação se a mensagem de erro existe e contém o texto 'Erro'
-      cy.get('.toast-message').should('exist')
-      .should('contain','Bem vindo');
+      // Verificação se a mensagem de sucesso existe e contém o texto 'Bem vindo'
+      cy.get(toastMessage.toastMessage).should('exist')
+      .should('contain','Bem vindo')
     }
     
     // Chamada da função de login
@@ -29,12 +32,12 @@ Cypress.Commands.add('loginDenied', (
     const loginDenied = () => {
       // Ações para realizar o login
       cy.visit('https://barrigareact.wcaquino.me/')  
-      cy.get('[data-test="email"]').type(user)
-      cy.get('[data-test="passwd"]').type('senha')
-      cy.get('[type="submit"]').contains('Entrar').click()
+      cy.get(loginPage.EmailInput).type(user)
+      cy.get(loginPage.PasswordInput).type('senha')
+      cy.get(loginPage.SubmitButton).click()
 
       // Verificação se a mensagem de erro existe e contém o texto 'Erro'
-      cy.get('.toast-message').should('exist')
+      cy.get(toastMessage.toastMessage).should('exist')
       .should('contain','Erro')
     }
   
