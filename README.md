@@ -23,4 +23,5 @@ Este projeto foi criado a fim de aplicar conhecimentos adquiridos durante os est
 
 - Registrar.cy.js:
    - Registro efetuado com sucesso
+   - Registro negado: dados inválidos
    (Em construção)
