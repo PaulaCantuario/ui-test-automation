@@ -1,5 +1,5 @@
 # Testes automatizados com Cypress - Testando aplicação WEB de terceiros
-Esta documentação existe a fim de aplicar conhecimentos adquiridos durante os estudos da ferramenta Cypress efetuados por mim.
+Este projeto foi criado a fim de aplicar conhecimentos adquiridos durante os estudos da ferramenta Cypress efetuados por mim.
 
 ## Aplicações em teste:
 - Até o presente momento a aplicação em teste é a página WEB: https://barrigareact.wcaquino.me/login (Todos os direitos reservados a Francisco Wagner Costa Aquino)
