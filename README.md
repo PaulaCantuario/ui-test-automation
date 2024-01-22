@@ -13,7 +13,8 @@ Este projeto foi criado a fim de aplicar conhecimentos adquiridos durante os est
 - **cypress\support\commands** -> Contém os comandos personalizados para modularizar o código tornado mais fácil a reutilização de algumas ações. Os arquivos estão separados e nomeados de acordo com as funções existentes em cada um. Cada arquivo commands deve ser referenciado em *cypress/support/e2e.js*.
 - **cypress\support\locators** -> Contém os localizadores de elementos para modularizar o código tornado mais fácil a reutilização de algumas ações. Os arquivos estão separados e nomeados de acordo com a existencia deles em tela da aplicação. 
 - **cypress.env.json** -> Contém algumas variáveis para utilização no código para que não seja necessário logar informações sensíveis durante os testes, como usuários e senhas.
-- **e2e** -> Contém os arquivos que armazenam as suítes de testes na estrutura: *Nome_da_funcionalidade.cy.js*
+- **Diretório e2e** -> Contém os arquivos que armazenam as suítes de testes na estrutura: *Nome_da_funcionalidade.cy.js*
+- **e2e.js** -> Contém as referências para os arquivos de comandos customizados
 - **cypress\support\utils** -> Contém arquivos de funções úteis para os testes, como criação de dados pela biblioteca faker.
 
 ## Cenários de testes:
@@ -24,4 +25,11 @@ Este projeto foi criado a fim de aplicar conhecimentos adquiridos durante os est
 - Registrar.cy.js:
    - Registro efetuado com sucesso
    - Registro negado: dados inválidos
-   (Em construção)
+
+- Barra Superior.cy.js:
+   - Verifica acesso aos menus da barra superior
+
+- Contas.cy.js
+   - Criação, edição e remoção de contas
+
+- ...(Em construção)

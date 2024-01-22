@@ -1,3 +1,4 @@
 export const toastMessage = {
-    toastMessage: '.toast-message'
+    toastMessage: '.toast-message',
+    toastCloseButton: '.toast-close-button'
 }

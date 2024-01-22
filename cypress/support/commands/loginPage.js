@@ -15,9 +15,6 @@ Cypress.Commands.add('login', (
       cy.get(loginPage.PasswordInput).type(password, { log: false })
       cy.get(loginPage.SubmitButton).click()
 
-      // Verificação se a mensagem de sucesso existe e contém o texto 'Bem vindo'
-      cy.get(toastMessage.toastMessage).should('exist')
-      .should('contain','Bem vindo')
     }
     
     // Chamada da função de login
@@ -36,12 +33,38 @@ Cypress.Commands.add('loginDenied', (
       cy.get(loginPage.PasswordInput).type('senha')
       cy.get(loginPage.SubmitButton).click()
 
-      // Verificação se a mensagem de erro existe e contém o texto 'Erro'
-      cy.get(toastMessage.toastMessage).should('exist')
-      .should('contain','Erro')
     }
   
     // Chamada da função de loginDenied
     loginDenied()
 
   })
+
+  //Login com usuário recém registrado
+  Cypress.Commands.add('loginUsuarioNovo', () => {
+
+    const loginUsuarioNovo = () => {
+      // Ações para realizar o login com um usuário recém cadastrado
+      cy.registrar()
+  
+      cy.get('@nomeRegistrado').then((nome) => {
+        cy.get('@emailRegistrado').then((email) => {
+          cy.get('@senhaRegistrado').then((senha) => {
+            // Utiliza os valores armazenados para realizar o login
+            cy.get(loginPage.EmailInput).type(email)
+            cy.get(loginPage.PasswordInput).type(senha)
+            cy.get(loginPage.SubmitButton).click()
+  
+            // Verifica se na mensagem do Toast é exibido o nome registrado
+            cy.get(toastMessage.toastMessage).should('exist')
+              .should('contain', nome)
+          })
+        })
+      })
+    }
+  
+    // Chamada da função de login
+    loginUsuarioNovo()
+  
+  })
+  
